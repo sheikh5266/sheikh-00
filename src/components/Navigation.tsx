@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles, ArrowRight } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,10 +74,14 @@ const Navigation = () => {
               </button>
             ))}
             <Button 
-              className="btn-hero text-sm lg:text-base px-4 py-2 lg:px-6 lg:py-3"
+              className="btn-hero text-sm lg:text-base px-4 py-2 lg:px-6 lg:py-3 group relative overflow-hidden"
               onClick={() => handleNavigation({ name: 'Contact', id: 'contact' })}
             >
-              Get Quote
+              <span className="relative z-10 flex items-center">
+                Get Quote
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
           </div>
 
@@ -109,10 +113,14 @@ const Navigation = () => {
                 </button>
               ))}
               <Button 
-                className="btn-hero mt-4 w-full"
+                className="btn-hero mt-4 w-full group relative overflow-hidden"
                 onClick={() => handleNavigation({ name: 'Contact', id: 'contact' })}
               >
-                Get Quote
+                <span className="relative z-10 flex items-center">
+                  Get Quote
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </div>
           </div>

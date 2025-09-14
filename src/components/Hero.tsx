@@ -94,11 +94,14 @@ const Hero = () => {
               
               <Button 
                 variant="outline"
-                className="btn-hero-outline btn-ripple group animate-hover-lift cursor-follow"
+                className="btn-hero-outline btn-ripple group relative overflow-hidden"
                 onClick={() => scrollToSection('contact')}
               >
-                <Star className="mr-2 h-5 w-5 animate-heartbeat group-hover:animate-tada" />
-                <span className="animate-wobble">Request a Quote</span>
+                <span className="relative z-10 flex items-center">
+                  <Star className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  Request a Quote
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </div>
           </div>

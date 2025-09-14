@@ -303,9 +303,12 @@ const Contact = () => {
                 />
               </div>
 
-              <Button type="submit" className="btn-hero w-full filter-btn" disabled={isSubmitting}>
-                <Send className="mr-2 h-5 w-5 icon-bounce" />
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+              <Button type="submit" className="btn-hero w-full group relative overflow-hidden" disabled={isSubmitting}>
+                <span className="relative z-10 flex items-center">
+                  <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
 
               <p className="text-sm text-gray-500 text-center">

@@ -161,11 +161,14 @@ const Services = ({ isHomepage = false }: ServicesProps) => {
 
                 {/* Enhanced CTA */}
                 <Button 
-                  className="btn-hero w-full btn-ripple filter-btn"
+                  className="btn-hero w-full group relative overflow-hidden"
                   onClick={() => scrollToSection('contact')}
                 >
-                  Request This Service
-                  <ArrowRight className="ml-2 h-4 w-4 icon-bounce" />
+                  <span className="relative z-10 flex items-center">
+                    Request This Service
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
               </div>
             </div>
