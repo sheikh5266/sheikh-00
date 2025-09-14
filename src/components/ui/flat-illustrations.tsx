@@ -56,24 +56,46 @@ export const CreativeIcon = ({ className = "", style }: { className?: string; st
 export const AnimatedBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Top Section Illustrations */}
-      <CodeIcon className="absolute top-20 left-10 w-16 h-16 opacity-20 animate-float" />
-      <VideoIcon className="absolute top-40 right-16 w-12 h-12 opacity-15 animate-float" style={{ animationDelay: '1s' }} />
-      <DesignIcon className="absolute top-60 left-1/4 w-14 h-14 opacity-10 animate-float" style={{ animationDelay: '2s' }} />
+      {/* Floating Illustrations with Complex Animations */}
+      <CodeIcon className="absolute top-20 left-10 w-16 h-16 opacity-20 animate-float" style={{ animationDelay: '0s' }} />
+      <VideoIcon className="absolute top-40 right-16 w-12 h-12 opacity-15 animate-drift" style={{ animationDelay: '1s' }} />
+      <DesignIcon className="absolute top-60 left-1/4 w-14 h-14 opacity-25 animate-wiggle" style={{ animationDelay: '2s' }} />
       
-      {/* Middle Section Illustrations */}
-      <MarketingIcon className="absolute top-1/2 right-10 w-18 h-18 opacity-20 animate-float" style={{ animationDelay: '0.5s' }} />
-      <CreativeIcon className="absolute top-1/2 left-16 w-20 h-20 opacity-15 animate-float" style={{ animationDelay: '1.5s' }} />
+      {/* Orbiting Elements */}
+      <div className="absolute top-32 right-1/3 animate-orbit" style={{ animationDelay: '0s' }}>
+        <MarketingIcon className="w-10 h-10 opacity-20 animate-rotate-slow" />
+      </div>
       
-      {/* Bottom Section Illustrations */}
-      <CodeIcon className="absolute bottom-40 right-1/4 w-12 h-12 opacity-10 animate-float" style={{ animationDelay: '3s' }} />
-      <VideoIcon className="absolute bottom-60 left-20 w-16 h-16 opacity-15 animate-float" style={{ animationDelay: '2.5s' }} />
+      <div className="absolute bottom-40 left-1/3 animate-orbit" style={{ animationDelay: '6s' }}>
+        <CreativeIcon className="w-12 h-12 opacity-15 animate-wiggle" />
+      </div>
+      
+      {/* Drifting Icons */}
+      <CodeIcon className="absolute top-1/2 left-16 w-18 h-18 opacity-20 animate-drift" style={{ animationDelay: '0.5s' }} />
+      <VideoIcon className="absolute bottom-60 left-20 w-16 h-16 opacity-15 animate-bounce-slow" style={{ animationDelay: '2.5s' }} />
       <DesignIcon className="absolute bottom-20 right-20 w-14 h-14 opacity-20 animate-float" style={{ animationDelay: '4s' }} />
       
-      {/* Additional scattered elements */}
-      <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-mint/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-mint-light/30 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-1/3 left-2/3 w-4 h-4 bg-mint-dark/15 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
+      {/* Moving Geometric Shapes */}
+      <div className="absolute top-1/4 right-1/4 w-8 h-8 bg-mint/10 rounded-full animate-slide-diagonal" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-3/4 left-1/4 w-6 h-6 bg-mint-light/15 rotate-45 animate-drift" style={{ animationDelay: '3s' }} />
+      <div className="absolute bottom-1/4 right-1/3 w-10 h-10 bg-mint-dark/10 rounded-full animate-pulse-glow" style={{ animationDelay: '5s' }} />
+      
+      {/* Scattered Animated Particles */}
+      <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-mint/30 rounded-full animate-bounce-slow" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-mint-light/40 rounded-full animate-pulse-glow" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-1/3 left-2/3 w-4 h-4 bg-mint-dark/25 rounded-full animate-float" style={{ animationDelay: '3s' }} />
+      
+      {/* Additional Moving Elements */}
+      <div className="absolute top-16 left-2/3 w-5 h-5 border-2 border-mint/20 rotate-45 animate-rotate-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-32 right-1/4 w-3 h-8 bg-mint-light/15 rounded-full animate-wiggle" style={{ animationDelay: '4s' }} />
+      <div className="absolute top-2/3 left-16 w-6 h-6 bg-gradient-to-r from-mint/20 to-mint-light/20 rounded-full animate-drift" style={{ animationDelay: '6s' }} />
+      
+      {/* Trailing Particles */}
+      <div className="absolute top-1/2 right-20">
+        <div className="w-2 h-2 bg-mint/20 rounded-full animate-slide-diagonal" style={{ animationDelay: '0s' }} />
+        <div className="w-1 h-1 bg-mint-light/30 rounded-full animate-slide-diagonal" style={{ animationDelay: '0.2s', marginTop: '4px' }} />
+        <div className="w-1 h-1 bg-mint-dark/25 rounded-full animate-slide-diagonal" style={{ animationDelay: '0.4s', marginTop: '4px' }} />
+      </div>
     </div>
   );
 };

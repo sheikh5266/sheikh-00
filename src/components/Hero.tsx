@@ -18,15 +18,17 @@ const Hero = () => {
       ref={heroRef}
       className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden cursor-follow"
     >
-      {/* Enhanced Animated Background Elements with 3D effect */}
+      {/* Enhanced Animated Background Elements with Dynamic Movement */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-mint rounded-full mix-blend-multiply filter blur-xl animate-levitate"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-mint-light rounded-full mix-blend-multiply filter blur-xl animate-magnetic" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-primary rounded-full mix-blend-multiply filter blur-2xl animate-heartbeat opacity-30"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-mint rounded-full mix-blend-multiply filter blur-xl animate-drift"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-mint-light rounded-full mix-blend-multiply filter blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-primary rounded-full mix-blend-multiply filter blur-2xl animate-pulse-glow opacity-30"></div>
         
-        {/* Additional floating elements */}
-        <div className="absolute top-32 right-1/4 w-16 h-16 bg-mint/10 animate-spiral-in" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
-        <div className="absolute bottom-40 left-1/3 w-20 h-20 bg-primary/15 rounded-full animate-wobble" style={{ animationDelay: '3s' }}></div>
+        {/* Additional floating elements with complex animations */}
+        <div className="absolute top-32 right-1/4 w-16 h-16 bg-mint/10 animate-slide-diagonal" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
+        <div className="absolute bottom-40 left-1/3 w-20 h-20 bg-primary/15 rounded-full animate-bounce-slow" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/4 right-1/3 w-12 h-12 bg-mint-dark/10 rounded-full animate-orbit" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-mint-light/5 rounded-full animate-wiggle" style={{ animationDelay: '4s' }}></div>
       </div>
       
       {/* Flat Illustrations Background */}
