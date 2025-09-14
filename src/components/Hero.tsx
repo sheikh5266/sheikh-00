@@ -57,10 +57,6 @@ const Hero = () => {
               </div>
             </div>
 
-            <p className="text-lg text-gray-300 max-w-lg leading-relaxed stagger-child animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
-              Crafting conversion-focused digital experiences with <Heart className="inline h-5 w-5 text-mint animate-heartbeat" /> and precision. 
-              Let's transform your vision into reality.
-            </p>
 
             {/* Enhanced Micro Stats with advanced animations */}
             <div className="flex flex-wrap gap-4 stagger-child animate-zoom-in" style={{ animationDelay: '1.2s' }}>
