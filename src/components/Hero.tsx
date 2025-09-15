@@ -66,7 +66,8 @@ const Hero = () => {
                 { skill: 'Web Dev', icon: '🚀' },
                 { skill: 'Meta Ads', icon: '📈' },
                 { skill: 'Video Edit', icon: '🎬' },
-                { skill: 'Motion GFX', icon: '✨' }
+                { skill: 'Motion GFX', icon: '✨' },
+                { skill: 'Automation', icon: '🤖' }
               ].map((item, index) => (
                 <span 
                   key={item.skill} 
