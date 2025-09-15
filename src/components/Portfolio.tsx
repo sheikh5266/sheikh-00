@@ -108,41 +108,78 @@ const Portfolio = ({ isHomepage = false }: PortfolioProps) => {
       {/* Particle Background */}
       <ParticleBackground />
       
-      {/* Floating Background Elements */}
+      {/* Enhanced Floating Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
             className="absolute animate-float"
             style={{
-              left: `${10 + Math.random() * 80}%`,
-              top: `${10 + Math.random() * 80}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${6 + Math.random() * 3}s`
+              left: `${5 + Math.random() * 90}%`,
+              top: `${5 + Math.random() * 90}%`,
+              animationDelay: `${i * 0.3}s`,
+              animationDuration: `${4 + Math.random() * 4}s`
             }}
           >
-            <div className={`w-${4 + Math.floor(Math.random() * 4)} h-${4 + Math.floor(Math.random() * 4)} bg-mint/5 rounded-full`} />
+            <div 
+              className="bg-mint/5 rounded-full animate-pulse" 
+              style={{ 
+                width: `${8 + Math.random() * 16}px`, 
+                height: `${8 + Math.random() * 16}px`,
+                animationDelay: `${i * 0.2}s`
+              }} 
+            />
           </div>
         ))}
         
-        {/* Animated lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100">
+        {/* Geometric shapes */}
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-primary/8 animate-spin" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)', animationDuration: '15s' }} />
+        <div className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-mint/6 rounded-full animate-bounce" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-2/3 left-1/6 w-4 h-4 bg-primary/6 animate-spin" style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)', animationDuration: '8s' }} />
+        
+        {/* Enhanced Animated lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 100 100">
           <path
             d="M0,50 Q25,30 50,50 T100,50"
-            stroke="currentColor"
+            stroke="url(#gradient1)"
             strokeWidth="0.5"
             fill="none"
             className="animate-pulse"
+            style={{ animationDuration: '3s' }}
           />
           <path
             d="M0,30 Q25,50 50,30 T100,30"
-            stroke="currentColor"
+            stroke="url(#gradient2)"
             strokeWidth="0.3"
             fill="none"
             className="animate-pulse"
-            style={{ animationDelay: '1s' }}
+            style={{ animationDelay: '1s', animationDuration: '4s' }}
           />
+          <path
+            d="M0,70 Q25,50 50,70 T100,70"
+            stroke="url(#gradient1)"
+            strokeWidth="0.2"
+            fill="none"
+            className="animate-pulse"
+            style={{ animationDelay: '2s', animationDuration: '5s' }}
+          />
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: 'rgb(76, 175, 80)', stopOpacity: 0 }} />
+              <stop offset="50%" style={{ stopColor: 'rgb(76, 175, 80)', stopOpacity: 0.3 }} />
+              <stop offset="100%" style={{ stopColor: 'rgb(76, 175, 80)', stopOpacity: 0 }} />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: 'rgb(102, 187, 106)', stopOpacity: 0 }} />
+              <stop offset="50%" style={{ stopColor: 'rgb(102, 187, 106)', stopOpacity: 0.2 }} />
+              <stop offset="100%" style={{ stopColor: 'rgb(102, 187, 106)', stopOpacity: 0 }} />
+            </linearGradient>
+          </defs>
         </svg>
+        
+        {/* Floating gradient orbs */}
+        <div className="absolute top-20 right-1/5 w-40 h-40 bg-gradient-to-br from-mint/8 to-transparent rounded-full animate-float" style={{ animationDelay: '1s', animationDuration: '7s' }} />
+        <div className="absolute bottom-32 left-1/6 w-32 h-32 bg-gradient-to-tl from-primary/6 to-transparent rounded-full animate-float" style={{ animationDelay: '3s', animationDuration: '6s' }} />
       </div>
       
       <div className="container mx-auto relative z-10">

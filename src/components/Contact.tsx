@@ -132,10 +132,42 @@ const Contact = () => {
       {/* Particle Background */}
       <ParticleBackground />
       
-      {/* Soft animated gradients */}
+      {/* Enhanced soft animated gradients */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-mint rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-mint-light rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-mint rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-mint-light rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '3s', animationDuration: '10s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '1.5s', animationDuration: '6s' }}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-mint-dark/40 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '4s', animationDuration: '7s' }}></div>
+      </div>
+      
+      {/* Additional floating elements */}
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float"
+            style={{
+              left: `${10 + Math.random() * 80}%`,
+              top: `${10 + Math.random() * 80}%`,
+              animationDelay: `${i * 0.6}s`,
+              animationDuration: `${5 + Math.random() * 3}s`
+            }}
+          >
+            <div 
+              className={`bg-mint/10 rounded-full animate-pulse ${i % 2 === 0 ? 'animate-bounce' : ''}`}
+              style={{ 
+                width: `${4 + Math.random() * 8}px`, 
+                height: `${4 + Math.random() * 8}px`,
+                animationDelay: `${i * 0.3}s`
+              }} 
+            />
+          </div>
+        ))}
+        
+        {/* Geometric elements */}
+        <div className="absolute top-1/4 right-1/5 w-12 h-12 bg-mint/5 animate-spin" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', animationDuration: '20s' }} />
+        <div className="absolute bottom-1/4 left-1/6 w-8 h-8 bg-primary/8 rounded-full animate-bounce" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-2/3 right-1/3 w-6 h-6 bg-mint-light/10 animate-spin" style={{ clipPath: 'polygon(30% 0%, 0% 50%, 30% 100%, 100% 50%)', animationDuration: '15s', animationDelay: '1s' }} />
       </div>
       
       <div className="container mx-auto relative z-10">

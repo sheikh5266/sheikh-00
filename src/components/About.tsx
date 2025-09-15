@@ -45,21 +45,35 @@ const About = () => {
       ref={aboutRef}
       className="section-padding bg-gray-50 relative overflow-hidden"
     >
-      {/* Background Illustrations */}
+      {/* Background Illustrations with Animations */}
       <div className="absolute inset-0 pointer-events-none">
-        <DesignIcon className="absolute top-16 right-10 w-20 h-20 opacity-8" />
-        <VideoIcon className="absolute bottom-20 left-10 w-16 h-16 opacity-10" />
-        <CodeIcon className="absolute top-1/2 right-1/4 w-12 h-12 opacity-8" />
+        <DesignIcon className="absolute top-16 right-10 w-20 h-20 opacity-8 animate-float" style={{ animationDelay: '0s', animationDuration: '6s' }} />
+        <VideoIcon className="absolute bottom-20 left-10 w-16 h-16 opacity-10 animate-float" style={{ animationDelay: '2s', animationDuration: '5s' }} />
+        <CodeIcon className="absolute top-1/2 right-1/4 w-12 h-12 opacity-8 animate-float" style={{ animationDelay: '1s', animationDuration: '4s' }} />
         
-        {/* Floating Elements */}
-        <div className="absolute top-32 left-1/4 w-8 h-8 bg-mint/5 rounded-full"></div>
-        <div className="absolute bottom-40 right-1/3 w-6 h-6 bg-primary/5 rounded-full"></div>
-        <div className="absolute top-2/3 left-20 w-4 h-4 bg-mint-light/10 rounded-full"></div>
+        {/* Floating Elements with Pulse */}
+        <div className="absolute top-32 left-1/4 w-8 h-8 bg-mint/5 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-40 right-1/3 w-6 h-6 bg-primary/5 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-2/3 left-20 w-4 h-4 bg-mint-light/10 rounded-full animate-pulse" style={{ animationDelay: '2.5s' }}></div>
         
-        {/* Geometric elements */}
-        <div className="absolute top-1/4 left-1/3 w-12 h-12 bg-primary/5" 
-             style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
-        <div className="absolute bottom-1/3 right-1/4 w-10 h-10 bg-mint/8 rounded-full"></div>
+        {/* Geometric elements with rotation */}
+        <div className="absolute top-1/4 left-1/3 w-12 h-12 bg-primary/5 animate-spin" 
+             style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)', animationDuration: '10s' }}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-10 h-10 bg-mint/8 rounded-full animate-bounce" style={{ animationDelay: '3s' }}></div>
+        
+        {/* Additional floating particles */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-mint/5 rounded-full animate-float"
+            style={{
+              left: `${15 + Math.random() * 70}%`,
+              top: `${15 + Math.random() * 70}%`,
+              animationDelay: `${i * 0.7}s`,
+              animationDuration: `${4 + Math.random() * 3}s`
+            }}
+          />
+        ))}
       </div>
       
       <div className="container mx-auto relative z-10">

@@ -74,26 +74,37 @@ const Services = ({ isHomepage = false }: ServicesProps) => {
       {/* Animated Gradient Waves Background */}
       <div className="absolute inset-0 gradient-waves opacity-5"></div>
       
-      {/* Background Illustrations */}
+      {/* Background Illustrations with Enhanced Animations */}
       <div className="absolute inset-0 pointer-events-none">
-        <MarketingIcon className="absolute top-20 left-10 w-24 h-24 opacity-4 animate-float icon-pulse" style={{ animationDelay: '1s' }} />
-        <CreativeIcon className="absolute bottom-32 right-16 w-20 h-20 opacity-5 animate-float icon-rotate" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-1/3 right-1/4 w-4 h-4 bg-mint/10 rounded-full animate-pulse icon-bounce" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/2 left-1/3 w-3 h-3 bg-mint-light/15 rounded-full animate-pulse icon-pulse" style={{ animationDelay: '4s' }} />
+        <MarketingIcon className="absolute top-20 left-10 w-24 h-24 opacity-4 animate-float" style={{ animationDelay: '1s', animationDuration: '8s' }} />
+        <CreativeIcon className="absolute bottom-32 right-16 w-20 h-20 opacity-5 animate-float" style={{ animationDelay: '3s', animationDuration: '6s' }} />
+        <div className="absolute top-1/3 right-1/4 w-4 h-4 bg-mint/10 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/2 left-1/3 w-3 h-3 bg-mint-light/15 rounded-full animate-pulse" style={{ animationDelay: '4s' }} />
         
-        {/* Floating Elements */}
-        {[...Array(6)].map((_, i) => (
+        {/* Additional geometric shapes */}
+        <div className="absolute top-1/4 right-1/3 w-6 h-6 bg-primary/5 animate-spin" style={{ clipPath: 'polygon(30% 0%, 0% 50%, 30% 100%, 100% 50%)', animationDuration: '12s' }} />
+        <div className="absolute bottom-1/4 left-1/4 w-8 h-8 bg-mint/8 rounded-full animate-bounce" style={{ animationDelay: '5s' }} />
+        
+        {/* Enhanced Floating Elements */}
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-mint/10 rounded-full animate-float"
+            className={`absolute rounded-full animate-float ${i % 3 === 0 ? 'animate-pulse' : ''}`}
             style={{
-              left: `${20 + Math.random() * 60}%`,
-              top: `${20 + Math.random() * 60}%`,
-              animationDelay: `${i * 0.8}s`,
-              animationDuration: `${4 + Math.random() * 2}s`
+              width: `${2 + Math.random() * 4}px`,
+              height: `${2 + Math.random() * 4}px`,
+              backgroundColor: i % 2 === 0 ? 'rgba(76, 175, 80, 0.1)' : 'rgba(76, 175, 80, 0.05)',
+              left: `${10 + Math.random() * 80}%`,
+              top: `${10 + Math.random() * 80}%`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
             }}
           />
         ))}
+        
+        {/* Animated gradient orbs */}
+        <div className="absolute top-10 right-1/4 w-32 h-32 bg-gradient-to-r from-mint/5 to-transparent rounded-full animate-pulse" style={{ animationDelay: '0s', animationDuration: '4s' }} />
+        <div className="absolute bottom-20 left-1/5 w-24 h-24 bg-gradient-to-l from-primary/5 to-transparent rounded-full animate-pulse" style={{ animationDelay: '2s', animationDuration: '5s' }} />
       </div>
       
       <div className="container mx-auto relative z-10">
