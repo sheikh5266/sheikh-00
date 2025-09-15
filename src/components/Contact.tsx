@@ -129,45 +129,54 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section-padding bg-white relative overflow-hidden">
-      {/* Particle Background */}
+      {/* Enhanced Particle Background */}
       <ParticleBackground />
       
-      {/* Enhanced soft animated gradients */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-mint rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-mint-light rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '3s', animationDuration: '10s' }}></div>
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '1.5s', animationDuration: '6s' }}></div>
-        <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-mint-dark/40 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '4s', animationDuration: '7s' }}></div>
+      {/* Prominent animated background elements */}
+      <div className="absolute inset-0 opacity-30">
+        {/* Large animated orbs */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-mint rounded-full mix-blend-multiply filter blur-3xl animate-float animate-pulse-glow" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-mint-light rounded-full mix-blend-multiply filter blur-3xl animate-drift animate-pulse-glow" style={{ animationDelay: '3s', animationDuration: '10s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-orbit" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-mint-dark/50 rounded-full mix-blend-multiply filter blur-3xl animate-wiggle animate-pulse-glow" style={{ animationDelay: '4s', animationDuration: '7s' }}></div>
+        
+        {/* Additional medium orbs */}
+        <div className="absolute top-1/4 left-1/6 w-32 h-32 bg-mint/20 rounded-full animate-bounce-slow animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/4 right-1/6 w-24 h-24 bg-primary/25 rounded-full animate-float animate-pulse" style={{ animationDelay: '5s' }}></div>
       </div>
       
-      {/* Additional floating elements */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        {[...Array(10)].map((_, i) => (
+      {/* Enhanced floating elements */}
+      <div className="absolute inset-0 pointer-events-none opacity-40">
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
             className="absolute animate-float"
             style={{
               left: `${10 + Math.random() * 80}%`,
               top: `${10 + Math.random() * 80}%`,
-              animationDelay: `${i * 0.6}s`,
-              animationDuration: `${5 + Math.random() * 3}s`
+              animationDelay: `${i * 0.4}s`,
+              animationDuration: `${4 + Math.random() * 4}s`
             }}
           >
             <div 
-              className={`bg-mint/10 rounded-full animate-pulse ${i % 2 === 0 ? 'animate-bounce' : ''}`}
+              className={`bg-mint/25 rounded-full ${i % 4 === 0 ? 'animate-pulse' : i % 4 === 1 ? 'animate-bounce-slow' : i % 4 === 2 ? 'animate-wiggle' : 'animate-drift'}`}
               style={{ 
-                width: `${4 + Math.random() * 8}px`, 
-                height: `${4 + Math.random() * 8}px`,
-                animationDelay: `${i * 0.3}s`
+                width: `${6 + Math.random() * 10}px`, 
+                height: `${6 + Math.random() * 10}px`,
+                animationDelay: `${i * 0.2}s`
               }} 
             />
           </div>
         ))}
         
-        {/* Geometric elements */}
-        <div className="absolute top-1/4 right-1/5 w-12 h-12 bg-mint/5 animate-spin" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', animationDuration: '20s' }} />
-        <div className="absolute bottom-1/4 left-1/6 w-8 h-8 bg-primary/8 rounded-full animate-bounce" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-2/3 right-1/3 w-6 h-6 bg-mint-light/10 animate-spin" style={{ clipPath: 'polygon(30% 0%, 0% 50%, 30% 100%, 100% 50%)', animationDuration: '15s', animationDelay: '1s' }} />
+        {/* Animated geometric elements */}
+        <div className="absolute top-1/4 right-1/5 w-16 h-16 bg-mint/15 animate-rotate-slow animate-pulse-glow" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
+        <div className="absolute bottom-1/4 left-1/6 w-12 h-12 bg-primary/20 rounded-full animate-orbit animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-2/3 right-1/3 w-8 h-8 bg-mint-light/25 animate-wiggle animate-bounce-slow" style={{ clipPath: 'polygon(30% 0%, 0% 50%, 30% 100%, 100% 50%)', animationDelay: '1s' }} />
+        
+        {/* Animated gradient lines */}
+        <div className="absolute top-1/3 left-0 w-full h-3 bg-gradient-to-r from-transparent via-mint/20 to-transparent animate-slide-diagonal" />
+        <div className="absolute bottom-1/3 left-0 w-full h-2 bg-gradient-to-r from-transparent via-primary/15 to-transparent animate-slide-diagonal" style={{ animationDelay: '3s', animationDirection: 'reverse' }} />
       </div>
       
       <div className="container mx-auto relative z-10">
