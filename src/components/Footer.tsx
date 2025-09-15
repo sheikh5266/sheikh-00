@@ -140,8 +140,22 @@ const Footer = () => {
             </div>
             
             <div className="flex space-x-6 text-sm text-gray-400">
-              <button className="hover:text-mint transition-colors">Privacy Policy</button>
-              <button className="hover:text-mint transition-colors">Terms of Service</button>
+              <a 
+                href="https://docs.google.com/document/d/1Nr2Vz5x7S35hwTIfeLUHapKWRWHsQ0h2pHVEjOkopIA/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-mint transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a 
+                href="https://docs.google.com/document/d/1l4jLneXatx-Dl3KUJVQTjLDZKIkZQc0kNMLyhTM0vls/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-mint transition-colors"
+              >
+                Terms of Service
+              </a>
             </div>
           </div>
         </div>
