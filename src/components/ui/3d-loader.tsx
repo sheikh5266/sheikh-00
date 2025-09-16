@@ -200,7 +200,6 @@ const Scene3D = () => {
       
       {/* Animated components */}
       <Particles />
-      <AnimatedGeometry />
       <LoadingRings />
     </>
   );

@@ -25,7 +25,7 @@ const App = () => (
         <BrowserRouter>
           <Suspense fallback={
             <div className="min-h-screen bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal flex items-center justify-center">
-              <ThreeDLoader text="Loading Amazing Content..." className="w-full max-w-md" />
+              <ThreeDLoader showText={false} className="w-full max-w-md" />
             </div>
           }>
             <Routes>
