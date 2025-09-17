@@ -514,7 +514,7 @@ const Resume = () => {
             <h2><span className="under">Contact</span></h2>
             <div className="grid">
               <div className="col-12">
-                <p>Email: <a href="mailto:sheikhmomin431@gmail.com">sheikhmomin431@gmail.com</a></p>
+                <p>Email: <a href="mailto:contact@sheikhmomin.site">contact@sheikhmomin.site</a></p>
                 <p>Phone: <a href="tel:+8801540567946">+880-154-056-7946</a></p>
                 <p>Website: <a href="http://www.sheikhmomin.com/" target="_blank" rel="noreferrer noopener">www.sheikhmomin.com</a></p>
                 <p>Address: 23/8 West Nabinagar, Kamrangirchar, Dhaka</p>

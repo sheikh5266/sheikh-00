@@ -82,8 +82,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'sheikhmomin431@gmail.com',
-      href: 'mailto:sheikhmomin431@gmail.com',
+      value: 'contact@sheikhmomin.site',
+      href: 'mailto:contact@sheikhmomin.site',
       description: 'Send me an email anytime'
     },
     {
