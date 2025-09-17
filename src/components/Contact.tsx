@@ -43,7 +43,7 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'service_lup1knh', // Service ID
+        'service_r9k1j1z', // Service ID
         'template_s7x0rat', // Template ID
         templateParams,
         'dTxNCIlH7ITAWvMPq' // Public Key
