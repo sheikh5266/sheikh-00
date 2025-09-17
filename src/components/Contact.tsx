@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -31,13 +32,24 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Form submission logic will be added here later
-      console.log('Form Data:', formData);
-      
-      // Simulate form processing
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast.success('Form submitted successfully! I\'ll get back to you soon.');
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        project_type: formData.projectType,
+        budget: formData.budget,
+        message: formData.message,
+        to_name: 'Sheikh Momin',
+      };
+
+      await emailjs.send(
+        'service_r9k1j1z', // Service ID
+        'template_s7x0rat', // Template ID
+        templateParams,
+        'dTxNCIlH7ITAWvMPq' // Public Key
+      );
+
+      toast.success('Message sent successfully! I\'ll get back to you soon.');
       setShowSuccess(true);
       
       // Reset form
@@ -52,8 +64,8 @@ const Contact = () => {
       // Hide success animation after 3 seconds
       setTimeout(() => setShowSuccess(false), 3000);
     } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error('Failed to submit form. Please try again or contact me directly.');
+      console.error('EmailJS Error:', error);
+      toast.error('Failed to send message. Please try again or contact me directly.');
     } finally {
       setIsSubmitting(false);
     }
