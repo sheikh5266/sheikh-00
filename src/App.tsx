@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
-import { ThreeDLoader } from "@/components/ui/3d-loader";
+import { GlobeLoader } from "@/components/ui/globe-loader";
 
 // Lazy load pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -23,11 +23,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Suspense fallback={
-            <div className="min-h-screen bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal flex items-center justify-center">
-              <ThreeDLoader showText={false} className="w-full max-w-md" />
-            </div>
-          }>
+          <Suspense fallback={<GlobeLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
