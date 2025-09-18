@@ -1,128 +1,118 @@
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { EnhancedButton } from "@/components/ui/enhanced-button";
-import { Home, Search, RefreshCw } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
+
+declare global {
+  interface Window {
+    Parallax: any;
+  }
+}
 
 const NotFound = () => {
   const location = useLocation();
+  const sceneRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+
+    // Load Parallax.js
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/wagerfield/parallax@master/dist/parallax.min.js';
+    script.onload = () => {
+      if (sceneRef.current && window.Parallax) {
+        new window.Parallax(sceneRef.current);
+      }
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-animated relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-mint/10 rounded-full animate-float" />
-        <div className="absolute bottom-20 right-20 w-24 h-24 bg-primary/10 animate-swing" />
-        <div className="absolute top-1/2 left-10 w-16 h-16 bg-mint/5 animate-breathe" />
+    <>
+      <Helmet>
+        <title>404 - Page Not Found | Sheikh Momin</title>
+        <meta name="description" content="The page you're looking for doesn't exist. Return to Sheikh Momin's portfolio homepage." />
+        <link rel="canonical" href={`https://www.sheikhmomin.site${location.pathname}`} />
+      </Helmet>
+
+      {/* About Section with Social Links */}
+      <div className="about-404">
+        <a className="bg_links social portfolio" href="https://www.sheikhmomin.site" target="_blank" rel="noopener noreferrer">
+          <span className="icon"></span>
+        </a>
+        <a className="bg_links social dribbble" href="https://dribbble.com/sheikhmomin" target="_blank" rel="noopener noreferrer">
+          <span className="icon"></span>
+        </a>
+        <a className="bg_links social linkedin" href="https://www.linkedin.com/in/sheikh-momin/" target="_blank" rel="noopener noreferrer">
+          <span className="icon"></span>
+        </a>
+        <a className="bg_links logo-404"></a>
       </div>
-      
-      <div className="text-center max-w-md mx-auto px-6 relative z-10">
-        {/* Animated 404 Illustration */}
-        <div className="mb-8 animate-bounce-in">
-          <svg 
-            width="200" 
-            height="150" 
-            viewBox="0 0 200 150" 
-            className="mx-auto animate-float"
-          >
-            {/* Lost Robot */}
-            <g className="animate-breathe">
-              {/* Robot Body */}
-              <rect x="80" y="60" width="40" height="50" rx="8" fill="hsl(var(--charcoal))" />
-              
-              {/* Robot Head */}
-              <rect x="85" y="30" width="30" height="35" rx="15" fill="hsl(var(--charcoal-light))" />
-              
-              {/* Eyes */}
-              <circle cx="92" cy="42" r="3" fill="hsl(var(--mint))" className="animate-pulse-glow" />
-              <circle cx="108" cy="42" r="3" fill="hsl(var(--mint))" className="animate-pulse-glow" />
-              
-              {/* Antenna */}
-              <line x1="100" y1="30" x2="100" y2="20" stroke="hsl(var(--primary))" strokeWidth="2" />
-              <circle cx="100" cy="20" r="3" fill="hsl(var(--primary))" className="animate-pulse" />
-              
-              {/* Arms */}
-              <rect x="65" y="70" width="12" height="25" rx="6" fill="hsl(var(--charcoal-light))" />
-              <rect x="123" y="70" width="12" height="25" rx="6" fill="hsl(var(--charcoal-light))" />
-              
-              {/* Legs */}
-              <rect x="87" y="110" width="8" height="20" rx="4" fill="hsl(var(--charcoal))" />
-              <rect x="105" y="110" width="8" height="20" rx="4" fill="hsl(var(--charcoal))" />
-            </g>
-            
-            {/* Flashlight Beam */}
-            <path
-              d="M 135 82 L 180 70 L 180 94 Z"
-              fill="hsl(var(--mint) / 0.3)"
-              className="animate-pulse"
-            />
-            
-            {/* Question Marks */}
-            <text x="60" y="40" fontSize="20" fill="hsl(var(--mint))" className="animate-bounce-in" style={{ animationDelay: '1s' }}>?</text>
-            <text x="150" y="50" fontSize="16" fill="hsl(var(--primary))" className="animate-bounce-in" style={{ animationDelay: '1.5s' }}>?</text>
-            <text x="40" y="90" fontSize="14" fill="hsl(var(--mint-light))" className="animate-bounce-in" style={{ animationDelay: '2s' }}>?</text>
-          </svg>
+
+      {/* Navigation */}
+      <nav className="nav-404">
+        <div className="menu-404">
+          <p className="website_name">SHEIKH MOMIN</p>
+          <div className="menu_links">
+            <a href="/" className="link">home</a>
+            <a href="/portfolio" className="link">portfolio</a>
+            <a href="/services" className="link">services</a>
+            <a href="/resume" className="link">resume</a>
+          </div>
+          <div className="menu_icon">
+            <span className="icon"></span>
+          </div>
         </div>
-        
-        {/* 404 Text with Glitch Effect */}
-        <h1 className="text-8xl font-bold mb-4 gradient-text animate-scale-in">
-          404
-        </h1>
-        
-        {/* Animated Text */}
-        <div className="space-y-4 mb-8">
-          <p className="text-2xl font-semibold text-foreground animate-fade-in-up">
-            Oops! Page not found
-          </p>
-          <p className="text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Looks like our robot friend got lost too! The page you're looking for doesn't exist.
-          </p>
+      </nav>
+
+      <section className="wrapper-404">
+        <div className="container-404">
+          <div ref={sceneRef} className="scene" data-hover-only="false">
+            <div className="circle" data-depth="1.2"></div>
+
+            <div className="one" data-depth="0.9">
+              <div className="content">
+                <span className="piece"></span>
+                <span className="piece"></span>
+                <span className="piece"></span>
+              </div>
+            </div>
+
+            <div className="two" data-depth="0.60">
+              <div className="content">
+                <span className="piece"></span>
+                <span className="piece"></span>
+                <span className="piece"></span>
+              </div>
+            </div>
+
+            <div className="three" data-depth="0.40">
+              <div className="content">
+                <span className="piece"></span>
+                <span className="piece"></span>
+                <span className="piece"></span>
+              </div>
+            </div>
+
+            <p className="p404" data-depth="0.50">404</p>
+            <p className="p404" data-depth="0.10">404</p>
+          </div>
+
+          <div className="text-404">
+            <article>
+              <p>Uh oh! Looks like you got lost. <br />Go back to the homepage if you dare!</p>
+              <button onClick={() => window.location.href = '/'}>i dare!</button>
+            </article>
+          </div>
         </div>
-        
-        {/* Animated Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <EnhancedButton 
-            variant="hero" 
-            size="lg" 
-            animation="bounce"
-            icon={<Home />}
-            onClick={() => window.location.href = '/'}
-          >
-            Return Home
-          </EnhancedButton>
-          
-          <EnhancedButton 
-            variant="outline" 
-            size="lg" 
-            animation="breathe"
-            icon={<Search />}
-            onClick={() => window.history.back()}
-          >
-            Go Back
-          </EnhancedButton>
-          
-          <EnhancedButton 
-            variant="ghost" 
-            size="lg" 
-            animation="float"
-            icon={<RefreshCw />}
-            onClick={() => window.location.reload()}
-          >
-            Refresh
-          </EnhancedButton>
-        </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute -top-10 -left-10 w-5 h-5 bg-mint rounded-full animate-particle-drift opacity-60" />
-        <div className="absolute -bottom-5 -right-5 w-3 h-3 bg-primary rounded-full animate-particle-drift opacity-40" style={{ animationDelay: '3s' }} />
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 
