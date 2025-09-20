@@ -10,6 +10,13 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { BlogSection } from "@/components/BlogSection";
+import { SocialProof } from "@/components/SocialProof";
+import { LeadMagnets } from "@/components/LeadMagnets";
+import { Newsletter } from "@/components/Newsletter";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { SearchBar } from "@/components/SearchBar";
+import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 
 const Index = () => {
   return (
@@ -47,12 +54,21 @@ const Index = () => {
         
         {/* Preload Critical Resources */}
         <link rel="preload" href="/sheikh-momin-profile.png" as="image" />
+        <link rel="preload" href="/portfolio-ecommerce-video.jpg" as="image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://api.emailjs.com" />
+        
+        {/* Performance Hints */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Helmet>
       
       <StructuredData type="person" />
       <GoogleAnalytics />
+      <ThemeToggle />
+      <SearchBar />
+      <PerformanceMonitor />
       
       <main className="min-h-screen relative">
         <Navigation />
@@ -79,6 +95,22 @@ const Index = () => {
         
         <section id="faq">
           <FAQ />
+        </section>
+        
+        <section id="blog">
+          <BlogSection isHomepage={true} />
+        </section>
+        
+        <section id="social-proof">
+          <SocialProof />
+        </section>
+        
+        <section id="lead-magnets">
+          <LeadMagnets />
+        </section>
+        
+        <section id="newsletter" className="container mx-auto px-6 mb-16">
+          <Newsletter />
         </section>
         
         <section id="contact">

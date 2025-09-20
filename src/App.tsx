@@ -6,37 +6,42 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import { GlobeLoader } from "@/components/ui/globe-loader";
+import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
 
 // Lazy load pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
 const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const ResumePage = lazy(() => import("./pages/ResumePage"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Suspense fallback={<GlobeLoader />}>
-            <Routes>
+  <ErrorBoundary>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Suspense fallback={<GlobeLoader />}>
+              <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/resume" element={<ResumePage />} />
+              <Route path="/blog" element={<BlogPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
+  </ErrorBoundary>
 );
 
 export default App;

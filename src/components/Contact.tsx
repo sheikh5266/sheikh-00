@@ -15,6 +15,7 @@ import {
   Send
 } from "lucide-react";
 import { AnimatedHand, SuccessAnimation, ParticleBackground } from "@/components/ui/animated-illustrations";
+import { CalendarBooking } from "@/components/CalendarBooking";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -244,7 +245,12 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="portfolio-card p-8 animate-scale-in transition-all duration-300 hover:shadow-lg relative">
+          <div className="space-y-8">
+            {/* Calendar Booking */}
+            <CalendarBooking />
+            
+            {/* Contact Form */}
+            <div className="portfolio-card p-8 animate-scale-in transition-all duration-300 hover:shadow-lg relative">
             {/* Success Animation Overlay */}
             {showSuccess && (
               <div className="absolute inset-0 bg-white/95 flex items-center justify-center z-50 rounded-xl">
@@ -356,6 +362,7 @@ const Contact = () => {
                 Your information will not be shared with third parties.
               </p>
             </form>
+            </div>
           </div>
         </div>
       </div>
