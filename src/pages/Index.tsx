@@ -28,6 +28,7 @@ const Index = () => {
           content="Professional digital marketing, web development, and video editing services. Specializing in Meta advertising, React development, and motion graphics. 50+ successful projects delivered." 
         />
         <meta name="keywords" content="digital marketing, Meta ads, Facebook advertising, web development, React developer, video editing, motion graphics, SEO, social media marketing, Bangladesh" />
+        <meta name="google-site-verification" content="sYe1j8HzMbggXwP5X-HlNZA9Mx5rRPEU12fuIhnpccE" />
         
         {/* Open Graph Tags */}
         <meta property="og:title" content="Sheikh Momin | Digital Marketing Specialist · Web Developer · Video Editor" />
