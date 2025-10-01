@@ -122,7 +122,6 @@ const Hero = () => {
                     alt="Sheikh Momin - Professional Headshot"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:animate-jello"
                     loading="eager"
-                    fetchPriority="high"
                     decoding="async"
                     width="384"
                     height="384"
