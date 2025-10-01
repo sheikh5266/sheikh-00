@@ -1,5 +1,9 @@
 import { Star, Quote } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import sarahImage from "@/assets/testimonial-sarah.jpg";
+import michaelImage from "@/assets/testimonial-michael.jpg";
+import emmaImage from "@/assets/testimonial-emma.jpg";
+import davidImage from "@/assets/testimonial-david.jpg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -8,7 +12,7 @@ const Testimonials = () => {
       name: "Sarah Johnson",
       company: "TechStart Inc.",
       role: "Marketing Director",
-      image: "/api/placeholder/80/80",
+      image: sarahImage,
       rating: 5,
       text: "Sheikh transformed our digital presence completely. The Meta ad campaigns delivered 300% ROI in just 2 months. His attention to detail and creative approach is exceptional.",
       project: "Meta Ads & Website Development"
@@ -18,7 +22,7 @@ const Testimonials = () => {
       name: "Michael Chen",
       company: "Fusion Restaurant",
       role: "Owner",
-      image: "/api/placeholder/80/80", 
+      image: michaelImage, 
       rating: 5,
       text: "The website Sheikh built for us is stunning and functional. Orders increased by 150% since launch. He understood our vision perfectly and delivered beyond expectations.",
       project: "Restaurant Website & Branding"
@@ -28,7 +32,7 @@ const Testimonials = () => {
       name: "Emma Rodriguez",
       company: "Creative Agency Co.",
       role: "Creative Director",
-      image: "/api/placeholder/80/80",
+      image: emmaImage,
       rating: 5,
       text: "Sheikh's video editing and motion graphics work is top-tier. He completed our corporate video series ahead of schedule and the quality exceeded our highest expectations.",
       project: "Video Production & Motion Graphics"
@@ -38,7 +42,7 @@ const Testimonials = () => {
       name: "David Thompson",
       company: "E-commerce Plus",
       role: "CEO",
-      image: "/api/placeholder/80/80",
+      image: davidImage,
       rating: 5,
       text: "Professional, responsive, and incredibly talented. Sheikh's automation solutions saved us 20+ hours per week. The ROI was immediate and substantial.",
       project: "E-commerce Automation & Ads"

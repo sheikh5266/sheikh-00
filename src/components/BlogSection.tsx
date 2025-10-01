@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowRight, Clock, Tag } from 'lucide-react';
 import { LazyImage } from '@/components/ui/LazyImage';
+import blogMetaAds from '@/assets/blog-meta-ads.jpg';
+import blogWebDev from '@/assets/blog-web-development.jpg';
+import blogVideoEditing from '@/assets/blog-video-editing.jpg';
+import blogCaseStudy from '@/assets/blog-case-study.jpg';
 
 interface BlogPost {
   id: string;
@@ -36,7 +40,7 @@ export const BlogSection = ({ isHomepage = false }: BlogSectionProps) => {
       readTime: '8 min read',
       publishDate: '2024-03-15',
       author: 'Sheikh Momin',
-      image: '/api/placeholder/400/250',
+      image: blogMetaAds,
       slug: 'optimize-meta-ads-roi',
       tags: ['Meta Ads', 'ROI', 'Digital Marketing']
     },
@@ -48,7 +52,7 @@ export const BlogSection = ({ isHomepage = false }: BlogSectionProps) => {
       readTime: '12 min read',
       publishDate: '2024-03-10',
       author: 'Sheikh Momin',
-      image: '/api/placeholder/400/250',
+      image: blogWebDev,
       slug: 'responsive-css-techniques',
       tags: ['CSS', 'Responsive Design', 'Web Development']
     },
@@ -60,7 +64,7 @@ export const BlogSection = ({ isHomepage = false }: BlogSectionProps) => {
       readTime: '10 min read',
       publishDate: '2024-03-05',
       author: 'Sheikh Momin',
-      image: '/api/placeholder/400/250',
+      image: blogVideoEditing,
       slug: 'social-media-video-workflow',
       tags: ['Video Editing', 'Social Media', 'Content Creation']
     },
@@ -72,7 +76,7 @@ export const BlogSection = ({ isHomepage = false }: BlogSectionProps) => {
       readTime: '15 min read',
       publishDate: '2024-02-28',
       author: 'Sheikh Momin',
-      image: '/api/placeholder/400/250',
+      image: blogCaseStudy,
       slug: 'ecommerce-success-case-study',
       tags: ['Case Study', 'E-commerce', 'Success Story']
     }

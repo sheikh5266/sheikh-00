@@ -1,4 +1,10 @@
 import { Star, TrendingUp, Users, Award } from 'lucide-react';
+import techCorpLogo from '@/assets/client-techcorp.png';
+import digitalAgencyLogo from '@/assets/client-digital-agency.png';
+import ecommerceLogo from '@/assets/client-ecommerce.png';
+import creativeStudioLogo from '@/assets/client-creative-studio.png';
+import marketingProLogo from '@/assets/client-marketing-pro.png';
+import webSolutionsLogo from '@/assets/client-web-solutions.png';
 
 export const SocialProof = () => {
   const stats = [
@@ -29,12 +35,12 @@ export const SocialProof = () => {
   ];
 
   const clientLogos = [
-    { name: 'TechCorp', logo: '/api/placeholder/120/60' },
-    { name: 'Digital Agency', logo: '/api/placeholder/120/60' },
-    { name: 'E-commerce Plus', logo: '/api/placeholder/120/60' },
-    { name: 'Creative Studio', logo: '/api/placeholder/120/60' },
-    { name: 'Marketing Pro', logo: '/api/placeholder/120/60' },
-    { name: 'Web Solutions', logo: '/api/placeholder/120/60' }
+    { name: 'TechCorp', logo: techCorpLogo },
+    { name: 'Digital Agency', logo: digitalAgencyLogo },
+    { name: 'E-commerce Plus', logo: ecommerceLogo },
+    { name: 'Creative Studio', logo: creativeStudioLogo },
+    { name: 'Marketing Pro', logo: marketingProLogo },
+    { name: 'Web Solutions', logo: webSolutionsLogo }
   ];
 
   const quickStats = [
